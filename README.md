@@ -28,6 +28,8 @@
 By centralizing the entire interview process into one easy-to-use app, the platform enhances communication, reduces administrative overhead, and accelerates the hiring process.
 
 🎨 Interviewhatak Cover Design 
+
 ![interviewhatak section](https://github.com/user-attachments/assets/1ae15b83-cd68-4fa6-82bc-1dbdb92746f7)
 
 🎯 Interviewhatak System Design 
+

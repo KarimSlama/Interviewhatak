@@ -8,7 +8,7 @@ ThemeData themeLight = ThemeData(
   brightness: Brightness.light,
   colorScheme: const ColorScheme.light(
     primary: AppColors.brown,
-    secondary: AppColors.black,
+    secondary: AppColors.white,
     error: Colors.red,
     onPrimary: AppColors.beig,
     onSecondary: AppColors.beig,
@@ -39,7 +39,7 @@ ThemeData themeLight = ThemeData(
   textTheme: TextTheme(
     bodyMedium: GoogleFonts.poppins(
       color: AppColors.brown,
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: FontWeight.w500,
     ),
   ),

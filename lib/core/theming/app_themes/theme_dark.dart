@@ -4,23 +4,23 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:interviewhatak/core/theming/app_colors/app_colors.dart';
 
 ThemeData themeDark = ThemeData(
-  scaffoldBackgroundColor: AppColors.white,
+  scaffoldBackgroundColor: AppColors.lightBlack,
   brightness: Brightness.dark,
-  colorScheme: const ColorScheme.light(
-    primary: AppColors.brown,
-    secondary: AppColors.black,
+  colorScheme: const ColorScheme.dark(
+    primary: AppColors.white,
+    secondary: AppColors.lightBlack,
     error: Colors.red,
     onPrimary: AppColors.beig,
     onSecondary: AppColors.beig,
     onSurface: AppColors.silver,
-    onError: AppColors.black,
+    onError: AppColors.white,
     brightness: Brightness.dark,
   ),
   appBarTheme: AppBarTheme(
-    backgroundColor: AppColors.black,
+    backgroundColor: AppColors.lightBlack,
     elevation: 0.0,
     titleTextStyle: GoogleFonts.poppins(
-      color: AppColors.brown,
+      color: AppColors.white,
       fontSize: 18,
       fontWeight: FontWeight.w500,
     ),
@@ -32,7 +32,7 @@ ThemeData themeDark = ThemeData(
       color: AppColors.white,
       fontSize: 14,
     ),
-    iconTheme:  const IconThemeData(
+    iconTheme: const IconThemeData(
       color: AppColors.white,
     ),
   ),
@@ -41,8 +41,8 @@ ThemeData themeDark = ThemeData(
   ),
   textTheme: TextTheme(
     bodyMedium: GoogleFonts.poppins(
-      color: AppColors.brown,
-      fontSize: 18,
+      color: AppColors.white,
+      fontSize: 16,
       fontWeight: FontWeight.w500,
     ),
   ),

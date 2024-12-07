@@ -15,7 +15,9 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var formKey = GlobalKey<FormState>();
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+      ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),

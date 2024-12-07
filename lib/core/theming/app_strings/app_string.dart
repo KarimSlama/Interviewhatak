@@ -23,6 +23,7 @@ class AppString {
   static const String password = 'password';
   static const String phone = 'phone';
   static const String forgotPassword = 'forgot password ?';
+  static const String forgotPasswordTitle = 'Forgot Password';
   static const String continueWithPhone = 'continue with phone';
   static const String continueWithGoogle = 'continue with Google';
   static const String newUser = 'new user ?';
@@ -31,5 +32,6 @@ class AppString {
   static const String createANewProfile = 'create a new profile';
   static const String signWithPhone = 'sign with phone';
   static const String signWithGoogle = 'sign with Google';
-
+  static const String enterYourEmailAddress = 'Enter Your Email Address';
+  static const String send = 'SEND';
 }

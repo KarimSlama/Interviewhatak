@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:interviewhatak/core/routing/routes.dart';
+import 'package:interviewhatak/interviewhatak/forgot_password/forgot_password_screen.dart';
 import 'package:interviewhatak/interviewhatak/login/login_screen.dart';
 import 'package:interviewhatak/interviewhatak/on_boarding/on_boarding_screen.dart';
 import 'package:interviewhatak/interviewhatak/sign_up/sign_up_screen.dart';
@@ -16,6 +17,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => LoginScreen());
       case Routes.signUpScreen:
         return MaterialPageRoute(builder: (_) => SignUpScreen());
+      case Routes.forgotPasswordScreen:
+        return MaterialPageRoute(builder: (_) => ForgotPasswordScreen());
       default:
         return null;
     }

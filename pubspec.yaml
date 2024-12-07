@@ -25,6 +25,8 @@ dependencies:
   # Customizable animated page indicator with a set of built-in effects.
   smooth_page_indicator: ^1.2.0+3
   flutter_svg: ^2.0.16
+  icon_broken: ^1.1.0
+
 
 dev_dependencies:
   flutter_test:

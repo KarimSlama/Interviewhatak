@@ -1,10 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:interviewhatak/core/helpers/separator.dart';
+import 'package:interviewhatak/core/helpers/spacing.dart';
+import 'package:interviewhatak/core/theming/app_strings/app_string.dart';
+import 'package:interviewhatak/interviewhatak/login/widgets/forgot_password_widget.dart';
+import 'package:interviewhatak/interviewhatak/login/widgets/login_button_widget.dart';
+import 'package:interviewhatak/interviewhatak/login/widgets/login_text_fields_widget.dart';
+import 'package:interviewhatak/interviewhatak/login/widgets/login_title_and_sub_widget.dart';
+import 'package:interviewhatak/interviewhatak/login/widgets/login_with_other_method_widget.dart';
+import 'package:interviewhatak/interviewhatak/login/widgets/new_user_widget.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                LoginTitleAndSubWidget(),
+                LoginTextFieldsWidget(),
+                LoginButtonWidget(),
+                ForgotPasswordWidget(),
+                verticalSpace(20),
+                heightSeparator(),
+                verticalSpace(20),
+                LoginWithOtherMethodWidget(
+                    text: AppString.continueWithPhone, onPressed: () {}),
+                verticalSpace(20),
+                LoginWithOtherMethodWidget(
+                    text: AppString.continueWithGoogle, onPressed: () {}),
+                NewUserWidget(),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

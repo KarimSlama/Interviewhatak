@@ -119,6 +119,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   } //end build()
 
   void submit() {
-    context.pushNamed(Routes.onBoardingScreen);
+    context.pushNamed(Routes.loginScreen);
   }
 }

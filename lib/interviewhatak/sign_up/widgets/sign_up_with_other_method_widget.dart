@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:interviewhatak/core/theming/app_colors/app_colors.dart';
 
-class LoginWithOtherMethodWidget extends StatelessWidget {
+class SignUpWithOtherMethodWidget extends StatelessWidget {
   final String text;
   final Function onPressed;
 
-  const LoginWithOtherMethodWidget(
+  const SignUpWithOtherMethodWidget(
       {super.key, required this.text, required this.onPressed});
 
   @override

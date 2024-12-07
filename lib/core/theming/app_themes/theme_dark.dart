@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:interviewhatak/core/theming/app_colors/app_colors.dart';
 
@@ -28,7 +27,7 @@ ThemeData themeDark = ThemeData(
       color: AppColors.white,
       size: 26,
     ),
-    toolbarTextStyle: GoogleFonts.manrope(
+    toolbarTextStyle: GoogleFonts.poppins(
       color: AppColors.white,
       fontSize: 14,
     ),
@@ -43,7 +42,6 @@ ThemeData themeDark = ThemeData(
     bodyMedium: GoogleFonts.poppins(
       color: AppColors.white,
       fontSize: 16,
-      fontWeight: FontWeight.w500,
     ),
   ),
 );

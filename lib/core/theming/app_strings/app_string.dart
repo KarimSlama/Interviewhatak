@@ -19,9 +19,17 @@ class AppString {
   static const String loginToLetYourselfReadyForAnyInterview =
       'login to let yourself ready\nfor any interview';
   static const String emailAddress = 'email address';
+  static const String userName = 'user name';
   static const String password = 'password';
+  static const String phone = 'phone';
   static const String forgotPassword = 'forgot password ?';
   static const String continueWithPhone = 'continue with phone';
   static const String continueWithGoogle = 'continue with Google';
   static const String newUser = 'new user ?';
+  static const String alreadyHaveAnAccount = 'already have an account ?';
+  static const String signUp = 'Sign Up';
+  static const String createANewProfile = 'create a new profile';
+  static const String signWithPhone = 'sign with phone';
+  static const String signWithGoogle = 'sign with Google';
+
 }

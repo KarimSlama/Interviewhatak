@@ -33,3 +33,4 @@ By centralizing the entire interview process into one easy-to-use app, the platf
 
 🎯 Interviewhatak System Design 
 
+![image](https://github.com/user-attachments/assets/11cf551e-9fb3-4a67-a0f4-3094f4d75fc4)

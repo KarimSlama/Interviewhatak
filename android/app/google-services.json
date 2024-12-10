@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "587240536640",
+    "project_id": "interview-hatk",
+    "storage_bucket": "interview-hatk.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587240536640:android:6d99eb419c096d8b80fda5",
+        "android_client_info": {
+          "package_name": "com.preparation.interviewhatak.interviewhatak"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkt9yfezMCrqFuXYnjHV_J-WZh3LPw8l0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

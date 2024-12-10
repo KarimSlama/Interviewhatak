@@ -15,6 +15,11 @@ class ForgotPasswordTextInputFieldWidget extends StatelessWidget {
       textInputType: TextInputType.emailAddress,
       hintName: AppString.enterYourEmailAddress,
       prefixIcon: IconBroken.Message,
+      validate: (value) {
+        if (value == null || value.isEmpty)
+          return 'please enter a valid email address';
+        return '';
+      },
     );
   }
 }

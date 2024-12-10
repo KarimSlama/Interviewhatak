@@ -27,6 +27,14 @@ class AppString {
   static const String continueWithPhone = 'continue with phone';
   static const String continueWithGoogle = 'continue with Google';
   static const String newUser = 'new user ?';
+  static const String pleaseEnteraValidUserName =
+      'please enter a valid user name';
+  static const String pleaseEnteraValidEmail =
+      'please enter a valid email address';
+  static const String pleaseEnteraValidPhone =
+      'please enter a valid phone number';
+  static const String pleaseEnteraValidPassword =
+      'please enter a valid password';
   static const String alreadyHaveAnAccount = 'already have an account ?';
   static const String signUp = 'Sign Up';
   static const String createANewProfile = 'create a new profile';

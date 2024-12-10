@@ -1,7 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:interviewhatak/core/helpers/app_constants.dart';
-import 'package:interviewhatak/core/helpers/extensions.dart';
 import 'package:interviewhatak/core/networking/register_service.dart';
 import 'package:interviewhatak/core/networking/server_result.dart';
 import 'package:interviewhatak/interviewhatak/sign_up/data/model/register_request.dart';

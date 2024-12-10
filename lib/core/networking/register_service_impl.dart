@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:interviewhatak/core/networking/register_service.dart';
 import 'package:interviewhatak/core/networking/server_result.dart';
@@ -17,7 +16,6 @@ class RegisterServiceImpl implements RegisterService {
       );
 
       String uid = userCredential.user!.uid;
-      print('the Uid in Register Service Imp is $uid');
       return ServerResult.success(uid);
     } catch (error) {
       return ServerResult.failure(error.toString());

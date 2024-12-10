@@ -19,12 +19,6 @@ late TextEditingController passwordController;
 
 class _SignUpTextFieldsWidgetsState extends State<SignUpTextFieldsWidgets> {
   @override
-  void initState() {
-    super.initState();
-    passwordController = context.read<RegisterCubit>().passwordController;
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Form(
       key: context.read<RegisterCubit>().formKey,
@@ -81,5 +75,11 @@ class _SignUpTextFieldsWidgetsState extends State<SignUpTextFieldsWidgets> {
         ],
       ),
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    passwordController = context.read<RegisterCubit>().passwordController;
   }
 }

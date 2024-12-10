@@ -8,7 +8,7 @@ class TextInputFieldsWidget extends StatelessWidget {
   final String hintName;
   final IconData prefixIcon;
   final IconData? suffixIcon;
-  final VoidCallback? onPressed;
+  final Function? onPressed;
   final FormFieldValidator<String> validate;
   final bool isObsecureText;
 
@@ -43,7 +43,7 @@ class TextInputFieldsWidget extends StatelessWidget {
               hintText: hintName,
               prefixIcon: Icon(prefixIcon),
               suffixIcon: IconButton(
-                onPressed: onPressed != null ? () => onPressed : null,
+                onPressed: onPressed != null ? () => onPressed!() : null,
                 icon: Icon(suffixIcon),
               ),
               border: InputBorder.none,

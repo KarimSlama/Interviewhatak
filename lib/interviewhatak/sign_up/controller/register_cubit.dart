@@ -1,5 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:interviewhatak/core/helpers/app_constants.dart';
+import 'package:interviewhatak/core/helpers/shared_preference.dart';
 import 'package:interviewhatak/core/networking/server_result.dart';
 import 'package:interviewhatak/interviewhatak/sign_up/controller/register_state.dart';
 import 'package:interviewhatak/interviewhatak/sign_up/data/repository/register_repository.dart';
@@ -25,14 +27,18 @@ class RegisterCubit extends Cubit<RegisterState> {
       passwordController.text,
     );
     response.when(
-      success: (data) {
-        emit(RegisterState.success(data));
-        print('Register Cubit Data Success $data');
+      success: (uId) {
+        saveUserUid(uId);
+        emit(RegisterState.success(uId));
       },
       failure: (error) {
-        RegisterState.error.toString();
-        print('Register Cubit Error Registeration $error');
+        emit(RegisterState.error(error: error));
       },
     );
+  }
+
+  Future<void> saveUserUid(uId) async {
+    await SharedPreference.setData(SharedPreferenceKey.userUidKey, uId);
+    print('The UID in sharedpreference sign $uId');
   }
 }

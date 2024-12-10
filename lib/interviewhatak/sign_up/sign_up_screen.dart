@@ -3,6 +3,7 @@ import 'package:interviewhatak/core/helpers/separator.dart';
 import 'package:interviewhatak/core/helpers/spacing.dart';
 import 'package:interviewhatak/core/theming/app_strings/app_string.dart';
 import 'package:interviewhatak/interviewhatak/sign_up/widgets/already_have_an_account.dart';
+import 'package:interviewhatak/interviewhatak/sign_up/widgets/register_bloc_listener.dart';
 import 'package:interviewhatak/interviewhatak/sign_up/widgets/sign_up_button_widget.dart';
 import 'package:interviewhatak/interviewhatak/sign_up/widgets/sign_up_text_fields_widgets.dart';
 import 'package:interviewhatak/interviewhatak/sign_up/widgets/sign_up_title_and_sub_widget.dart';
@@ -40,6 +41,7 @@ class SignUpScreen extends StatelessWidget {
                       text: AppString.signWithGoogle, onPressed: () {}),
                   verticalSpace(15),
                   AlreadyHaveAnAccount(),
+                  RegisterBlocListener(),
                 ],
               ),
             ),

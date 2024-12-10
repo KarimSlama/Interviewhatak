@@ -8,7 +8,9 @@ class TextInputFieldsWidget extends StatelessWidget {
   final String hintName;
   final IconData prefixIcon;
   final IconData? suffixIcon;
-  final Function? onPressed;
+  final VoidCallback? onPressed;
+  final FormFieldValidator<String> validate;
+  final bool isObsecureText;
 
   const TextInputFieldsWidget({
     super.key,
@@ -18,6 +20,8 @@ class TextInputFieldsWidget extends StatelessWidget {
     required this.prefixIcon,
     this.suffixIcon,
     this.onPressed,
+    required this.validate,
+    this.isObsecureText = false,
   });
 
   @override
@@ -31,11 +35,15 @@ class TextInputFieldsWidget extends StatelessWidget {
           child: TextFormField(
             controller: controller,
             keyboardType: textInputType,
+            obscureText: isObsecureText,
+            validator: (value) {
+              return validate(value);
+            },
             decoration: InputDecoration(
               hintText: hintName,
               prefixIcon: Icon(prefixIcon),
               suffixIcon: IconButton(
-                onPressed: () => onPressed,
+                onPressed: onPressed != null ? () => onPressed : null,
                 icon: Icon(suffixIcon),
               ),
               border: InputBorder.none,

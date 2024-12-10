@@ -17,6 +17,11 @@ class LoginTextFieldsWidgets extends StatelessWidget {
           textInputType: TextInputType.emailAddress,
           hintName: AppString.emailAddress,
           prefixIcon: IconBroken.Message,
+          validate: (value) {
+            if (value == null || value.isEmpty)
+              return 'please enter a valid email address';
+            return '';
+          },
         ),
         TextInputFieldsWidget(
           controller: passwordController,
@@ -25,6 +30,10 @@ class LoginTextFieldsWidgets extends StatelessWidget {
           prefixIcon: IconBroken.Password,
           suffixIcon: IconBroken.Show,
           onPressed: () {},
+          validate: (value) {
+            if (value == null || value.isEmpty)
+              return 'please enter a valid password';
+          },
         )
       ],
     );

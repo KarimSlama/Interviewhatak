@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:interviewhatak/core/helpers/app_constants.dart';
 import 'package:interviewhatak/core/helpers/extensions.dart';
 import 'package:interviewhatak/core/routing/routes.dart';
 import 'package:interviewhatak/interviewhatak/splash/widget/text_splash.dart';
@@ -22,7 +23,9 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future navigateToHome() async {
     await Future.delayed(const Duration(seconds: 5), () {
-      context.pushNamed(Routes.onBoardingScreen);
+      context.pushNamed(
+        isLoggedUser ? Routes.homeScreen : Routes.onBoardingScreen,
+      );
     });
   }
 

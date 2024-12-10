@@ -3,6 +3,7 @@ import 'package:interviewhatak/core/helpers/separator.dart';
 import 'package:interviewhatak/core/helpers/spacing.dart';
 import 'package:interviewhatak/core/theming/app_strings/app_string.dart';
 import 'package:interviewhatak/interviewhatak/login/widgets/forgot_password_widget.dart';
+import 'package:interviewhatak/interviewhatak/login/widgets/login_bloc_listener.dart';
 import 'package:interviewhatak/interviewhatak/login/widgets/login_button_widget.dart';
 import 'package:interviewhatak/interviewhatak/login/widgets/login_title_and_sub_widget.dart';
 import 'package:interviewhatak/interviewhatak/login/widgets/login_with_other_method_widget.dart';
@@ -38,6 +39,7 @@ class LoginScreen extends StatelessWidget {
                     text: AppString.continueWithGoogle, onPressed: () {}),
                 verticalSpace(15),
                 NewUserWidget(),
+                LoginBlocListener(),
               ],
             ),
           ),

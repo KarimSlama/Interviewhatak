@@ -38,7 +38,10 @@ dependencies:
   firebase_auth: ^5.3.4
   # Flutter plugin for Cloud Firestore, a cloud-hosted, noSQL database with live synchronization and offline support on Android and iOS.
   cloud_firestore: ^5.5.1
-
+  # Flutter plugin for reading and writing simple key-value pairs.
+  shared_preferences: ^2.3.3
+  # provides API to store data in secure storage. Keychain is used in iOS, KeyStore based solution is used in Android.
+  flutter_secure_storage: ^9.2.2
   icon_broken: ^1.1.0
   # A collection of loading indicators animated with flutter.
   flutter_spinkit: ^5.2.1

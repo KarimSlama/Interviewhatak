@@ -1,0 +1,17 @@
+default_platform(:android)
+
+platform :android do
+  desc "Lane for Android Firebase App Distribution"
+  lane :distribute do
+    sh "flutter clean"
+    sh "flutter build apk --release --flavor Production --target lib/main_production.dart --no-tree-shake-icons"
+    firebase_app_distribution(
+      app: "1:587240536640:android:6d99eb419c096d8b80fda5",
+      firebase_cli_token: "1//09ZL7-NCfPORtCgYIARAAGAkSNwF-L9IrXbX-QyImyuLtI-X0DKYFtbD7sx7GVCHlL3pKiW8n5U4Okz4AR6SqTL9rrBiUoK_KUHA",
+      android_artifact_type: "APK",
+      android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk",
+      testers: "kslama499@gmail.com",
+      release_notes: "Some Features in Live for Interviewhatak",
+  )
+  end
+end

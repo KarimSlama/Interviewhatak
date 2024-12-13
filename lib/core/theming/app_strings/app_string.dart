@@ -6,11 +6,11 @@ class AppString {
       'Inteviewhatak make you aware of many matters related to your field.';
   static const String beSureOfYourself = 'Be sure of yourself';
   static const String
-      inteviewhatakWillTrustYouThroughPracticeWithMoreQuestions =
+  inteviewhatakWillTrustYouThroughPracticeWithMoreQuestions =
       'Inteviewhatak will trust you through practice with more questions.';
   static const String receiveAnOfferToWork = 'Receive an offer to work';
   static const String
-      interviewhatakWillEnableYouToGetTheWorkYouWishToGetThroughoutTheTime =
+  interviewhatakWillEnableYouToGetTheWorkYouWishToGetThroughoutTheTime =
       'Interviewhatak will enable you to get the work you wish to get throughout the time.';
   static const String skip = 'skip';
   static const String start = 'start';
@@ -42,4 +42,5 @@ class AppString {
   static const String signWithGoogle = 'sign with Google';
   static const String enterYourEmailAddress = 'Enter Your Email Address';
   static const String send = 'SEND';
+  static const String welcome = 'Welcome 👋';
 }

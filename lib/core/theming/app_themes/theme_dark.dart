@@ -6,7 +6,7 @@ ThemeData themeDark = ThemeData(
   scaffoldBackgroundColor: AppColors.lightBlack,
   brightness: Brightness.dark,
   colorScheme: const ColorScheme.dark(
-    primary: AppColors.white,
+    primary: AppColors.lightBlack,
     secondary: AppColors.lightBlack,
     error: Colors.red,
     onPrimary: AppColors.beig,

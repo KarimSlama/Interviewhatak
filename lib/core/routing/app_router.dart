@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:interviewhatak/core/di/dependency_injection.dart';
 import 'package:interviewhatak/core/routing/routes.dart';
+import 'package:interviewhatak/interviewhatak/dashboard/controller/dashboard_cubit.dart';
+import 'package:interviewhatak/interviewhatak/dashboard/dashboard_screen.dart';
 import 'package:interviewhatak/interviewhatak/forgot_password/forgot_password_screen.dart';
 import 'package:interviewhatak/interviewhatak/home/home_screen.dart';
 import 'package:interviewhatak/interviewhatak/login/controller/login_cubit.dart';
@@ -38,6 +40,13 @@ class AppRouter {
       case Routes.forgotPasswordScreen:
         return MaterialPageRoute(
           builder: (_) => ForgotPasswordScreen(),
+        );
+
+      case Routes.dashboardScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+              create: (context) => getIt<DashboardCubit>(),
+              child: DashboardScreen()),
         );
 
       case Routes.homeScreen:

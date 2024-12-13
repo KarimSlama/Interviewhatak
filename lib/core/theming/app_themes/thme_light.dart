@@ -23,17 +23,17 @@ ThemeData themeLight = ThemeData(
       fontSize: 18,
       fontWeight: FontWeight.w500,
     ),
-    actionsIconTheme: IconThemeData(color: AppColors.black, size: 26),
+    actionsIconTheme: IconThemeData(color: AppColors.brown, size: 26),
     toolbarTextStyle: GoogleFonts.poppins(
-      color: AppColors.black,
+      color: AppColors.brown,
       fontSize: 14,
     ),
     iconTheme: const IconThemeData(
-      color: AppColors.black,
+      color: AppColors.brown,
     ),
   ),
   iconTheme: const IconThemeData(
-    color: AppColors.black,
+    color: AppColors.brown,
   ),
   textTheme: TextTheme(
     bodyMedium: GoogleFonts.poppins(

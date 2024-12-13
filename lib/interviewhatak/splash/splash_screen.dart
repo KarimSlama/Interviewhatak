@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Future navigateToHome() async {
     await Future.delayed(const Duration(seconds: 5), () {
       context.pushNamed(
-        isLoggedUser ? Routes.homeScreen : Routes.onBoardingScreen,
+        isLoggedUser ? Routes.dashboardScreen : Routes.onBoardingScreen,
       );
     });
   }

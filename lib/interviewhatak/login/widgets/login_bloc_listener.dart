@@ -27,7 +27,7 @@ class LoginBlocListener extends StatelessWidget {
           ),
           success: (data) {
             context.pop();
-            context.pushNamed(Routes.forgotPasswordScreen);
+            context.pushNamed(Routes.homeScreen);
           },
           error: (error) => setupErrorState(context, error),
         );

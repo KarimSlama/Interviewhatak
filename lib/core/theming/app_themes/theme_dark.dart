@@ -24,7 +24,7 @@ ThemeData themeDark = ThemeData(
       fontWeight: FontWeight.w500,
     ),
     actionsIconTheme: IconThemeData(
-      color: AppColors.white,
+      color: AppColors.brown,
       size: 26,
     ),
     toolbarTextStyle: GoogleFonts.poppins(
@@ -32,11 +32,11 @@ ThemeData themeDark = ThemeData(
       fontSize: 14,
     ),
     iconTheme: const IconThemeData(
-      color: AppColors.white,
+      color: AppColors.black,
     ),
   ),
   iconTheme: const IconThemeData(
-    color: AppColors.white,
+    color: AppColors.black,
   ),
   textTheme: TextTheme(
     bodyMedium: GoogleFonts.poppins(

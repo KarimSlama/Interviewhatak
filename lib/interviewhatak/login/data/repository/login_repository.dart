@@ -1,4 +1,4 @@
-import 'package:interviewhatak/core/networking/register_service.dart';
+import 'package:interviewhatak/core/networking/register/register_service.dart';
 import 'package:interviewhatak/core/networking/server_result.dart';
 import 'package:interviewhatak/interviewhatak/login/data/model/login_request_model.dart';
 

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:interviewhatak/interviewhatak/notification/notification_screen.dart';
 import 'package:interviewhatak/interviewhatak/dashboard/controller/dashboard_state.dart';
 import 'package:interviewhatak/interviewhatak/favorites/favorite_screen.dart';
-import 'package:interviewhatak/interviewhatak/home/home_screen.dart';
+import 'package:interviewhatak/interviewhatak/category/category_screen.dart';
 import 'package:interviewhatak/interviewhatak/profile/profile_screen.dart';
 
 class DashboardCubit extends Cubit<DashboardState> {
@@ -12,7 +12,7 @@ class DashboardCubit extends Cubit<DashboardState> {
   int currentIndex = 0;
 
   List<Widget> screens = [
-    HomeScreen(),
+    CategoryScreen(),
     FavoriteScreen(),
     NotificationScreen(),
     ProfileScreen()

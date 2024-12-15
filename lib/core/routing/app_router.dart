@@ -5,7 +5,8 @@ import 'package:interviewhatak/core/routing/routes.dart';
 import 'package:interviewhatak/interviewhatak/dashboard/controller/dashboard_cubit.dart';
 import 'package:interviewhatak/interviewhatak/dashboard/dashboard_screen.dart';
 import 'package:interviewhatak/interviewhatak/forgot_password/forgot_password_screen.dart';
-import 'package:interviewhatak/interviewhatak/home/home_screen.dart';
+import 'package:interviewhatak/interviewhatak/category/controller/category_cubit.dart';
+import 'package:interviewhatak/interviewhatak/category/category_screen.dart';
 import 'package:interviewhatak/interviewhatak/login/controller/login_cubit.dart';
 import 'package:interviewhatak/interviewhatak/login/login_screen.dart';
 import 'package:interviewhatak/interviewhatak/on_boarding/on_boarding_screen.dart';
@@ -48,11 +49,8 @@ class AppRouter {
               create: (context) => getIt<DashboardCubit>(),
               child: DashboardScreen()),
         );
-
       case Routes.homeScreen:
-        return MaterialPageRoute(
-          builder: (_) => HomeScreen(),
-        );
+        return MaterialPageRoute(builder: (_) => CategoryScreen());
       default:
         return null;
     }

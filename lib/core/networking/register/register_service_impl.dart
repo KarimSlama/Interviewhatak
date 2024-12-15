@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:interviewhatak/core/networking/register_service.dart';
+import 'package:interviewhatak/core/networking/register/register_service.dart';
 import 'package:interviewhatak/core/networking/server_result.dart';
 import 'package:interviewhatak/interviewhatak/login/data/model/login_request_model.dart';
 import 'package:interviewhatak/interviewhatak/sign_up/data/model/register_request.dart';

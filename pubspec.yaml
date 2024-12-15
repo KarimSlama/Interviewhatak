@@ -17,7 +17,7 @@ dependencies:
   # Flutter Widgets that Built to be used with the bloc state management package.
   flutter_bloc: ^8.1.6
   # Simple direct Service Locator that allows to decouple the interface from a concrete implementation and to access the concrete implementation from everywhere in your App"
-  get_it: ^8.0.2
+  get_it: ^8.0.3
   # Code generation for immutable classes that has a simple syntax/API without compromising on the features.
   freezed: ^2.5.7
   # Annotations for the freezed code-generator. This package does nothing without freezed too.

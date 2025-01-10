@@ -4,7 +4,7 @@ description: A new Flutter project.
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.0+1
+version: 1.0.2+1
 
 environment:
   sdk: '>=3.0.3 <4.0.0'
@@ -47,6 +47,8 @@ dependencies:
   flutter_spinkit: ^5.2.1
   # Stunning Animating Curved Shape Navigation Bar. Adjustable color, background color, animation curve, animation duration.
   curved_navigation_bar: ^1.0.6
+  # Flutter library to load and cache network images. Can also be used with placeholder and error widgets.
+  cached_network_image: ^3.4.1
 
 dev_dependencies:
   flutter_test:

@@ -4,8 +4,9 @@ import 'package:interviewhatak/core/di/dependency_injection.dart';
 import 'package:interviewhatak/core/routing/routes.dart';
 import 'package:interviewhatak/interviewhatak/dashboard/controller/dashboard_cubit.dart';
 import 'package:interviewhatak/interviewhatak/dashboard/dashboard_screen.dart';
+import 'package:interviewhatak/interviewhatak/field/controller/field_cubit.dart';
+import 'package:interviewhatak/interviewhatak/field/fields_screen.dart';
 import 'package:interviewhatak/interviewhatak/forgot_password/forgot_password_screen.dart';
-import 'package:interviewhatak/interviewhatak/category/controller/category_cubit.dart';
 import 'package:interviewhatak/interviewhatak/category/category_screen.dart';
 import 'package:interviewhatak/interviewhatak/login/controller/login_cubit.dart';
 import 'package:interviewhatak/interviewhatak/login/login_screen.dart';
@@ -49,8 +50,17 @@ class AppRouter {
               create: (context) => getIt<DashboardCubit>(),
               child: DashboardScreen()),
         );
-      case Routes.homeScreen:
+      case Routes.categoryScreen:
         return MaterialPageRoute(builder: (_) => CategoryScreen());
+
+      case Routes.fieldScreen:
+        String categoryName = settings.arguments as String;
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<FieldCubit>()..loadFields(categoryName),
+            child: AnimatedFieldScreen(categoryName: categoryName),
+          ),
+        );
       default:
         return null;
     }

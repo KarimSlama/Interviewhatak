@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:interviewhatak/core/helpers/extensions.dart';
 import 'package:interviewhatak/core/helpers/spacing.dart';
+import 'package:interviewhatak/core/routing/routes.dart';
 import 'package:interviewhatak/interviewhatak/category/data/models/categories_model.dart';
 
 class CategoryItemWidget extends StatelessWidget {
@@ -10,7 +12,10 @@ class CategoryItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        context.pushNamed(Routes.fieldScreen,
+            arguments: categoriesModel.categoryName);
+      },
       child: Column(
         children: [
           Container(

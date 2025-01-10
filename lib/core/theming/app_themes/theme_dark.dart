@@ -32,11 +32,11 @@ ThemeData themeDark = ThemeData(
       fontSize: 14,
     ),
     iconTheme: const IconThemeData(
-      color: AppColors.black,
+      color: AppColors.white,
     ),
   ),
   iconTheme: const IconThemeData(
-    color: AppColors.black,
+    color: AppColors.brown,
   ),
   textTheme: TextTheme(
     bodyMedium: GoogleFonts.poppins(

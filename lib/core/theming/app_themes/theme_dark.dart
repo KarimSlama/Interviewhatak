@@ -11,7 +11,7 @@ ThemeData themeDark = ThemeData(
     error: Colors.red,
     onPrimary: AppColors.beig,
     onSecondary: AppColors.beig,
-    onSurface: AppColors.silver,
+    surface: AppColors.lightBlack,
     onError: AppColors.white,
     brightness: Brightness.dark,
   ),
@@ -36,7 +36,7 @@ ThemeData themeDark = ThemeData(
     ),
   ),
   iconTheme: const IconThemeData(
-    color: AppColors.brown,
+    color: AppColors.white,
   ),
   textTheme: TextTheme(
     bodyMedium: GoogleFonts.poppins(

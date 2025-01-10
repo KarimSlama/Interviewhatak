@@ -7,4 +7,9 @@ class Routes {
   static const String dashboardScreen = '/dashboardScreen';
   static const String categoryScreen = '/categoryScreen';
   static const String fieldScreen = '/fieldScreen';
+  static const String settingsScreen = '/settingsScreen';
+  static const String editProfileScreen = '/editProfileScreen';
+  static const String userManagementScreen = '/userManagementScreen';
+  static const String aboutUsScreen = '/aboutUsScreen';
+  static const String contactUsScreen = '/contactUsScreen';
 }

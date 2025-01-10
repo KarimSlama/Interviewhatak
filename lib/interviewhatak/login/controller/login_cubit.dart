@@ -25,15 +25,15 @@ class LoginCubit extends Cubit<LoginState> {
 
     respone.when(
       success: (uId) {
-        saveUserUid(uId);
+        print('the uid id $uId');
+        saveUserUid(uId!);
         emit(LoginState.success(uId));
       },
       failure: (error) => emit(LoginState.error(error: error)),
     );
   }
 
-  Future<void> saveUserUid(uId) async {
+  Future<void> saveUserUid(String uId) async {
     await SharedPreference.setData(SharedPreferenceKey.userUidKey, uId);
-    print('The UID in sharedpreference login $uId');
   }
 }

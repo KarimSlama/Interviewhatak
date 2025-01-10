@@ -68,13 +68,13 @@ class SharedPreference {
 
   /// Save The [Key] and the [Value] in Flutter Secure Storage
   static setSecureString(key, value) async {
-    const flutterSecureStorage = FlutterSecureStorage();
+    final flutterSecureStorage = FlutterSecureStorage();
     debugPrint('SharedPrefHelper : saveSecureString with key : $key');
     await flutterSecureStorage.write(key: key, value: value);
   }
 
   static getSecureString(key) async {
-    const flutterSecureStorage = FlutterSecureStorage();
+    final flutterSecureStorage = FlutterSecureStorage();
     debugPrint('SharedPrefHelper : saveSecureString with key : $key');
     await flutterSecureStorage.read(key: key);
   }

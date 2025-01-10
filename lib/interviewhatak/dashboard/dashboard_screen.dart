@@ -21,6 +21,7 @@ class DashboardScreen extends StatelessWidget {
         body: DashboardBlocBuilder(),
         bottomNavigationBar: CurvedNavigationBar(
           backgroundColor: AppColors.orange,
+          color: Theme.of(context).colorScheme.surface,
           buttonBackgroundColor: AppColors.orange,
           index: cubit.currentIndex,
           onTap: (index) {

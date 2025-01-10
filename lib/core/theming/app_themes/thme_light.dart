@@ -12,6 +12,7 @@ ThemeData themeLight = ThemeData(
     onPrimary: AppColors.beig,
     onSecondary: AppColors.beig,
     onSurface: AppColors.silver,
+    surface: AppColors.white,
     onError: AppColors.white,
     brightness: Brightness.light,
   ),

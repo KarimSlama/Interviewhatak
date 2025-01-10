@@ -39,6 +39,5 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   Future<void> saveUserUid(uId) async {
     await SharedPreference.setData(SharedPreferenceKey.userUidKey, uId);
-    print('The UID in sharedpreference sign $uId');
   }
 }

@@ -8,12 +8,15 @@ import 'package:interviewhatak/interviewhatak/dashboard/controller/dashboard_cub
 import 'package:interviewhatak/interviewhatak/dashboard/dashboard_screen.dart';
 import 'package:interviewhatak/interviewhatak/edit_profile/edit_profile_screen.dart';
 import 'package:interviewhatak/interviewhatak/field/controller/field_cubit.dart';
+import 'package:interviewhatak/core/helpers/const.dart/fields_args.dart';
 import 'package:interviewhatak/interviewhatak/field/fields_screen.dart';
 import 'package:interviewhatak/interviewhatak/forgot_password/forgot_password_screen.dart';
 import 'package:interviewhatak/interviewhatak/category/category_screen.dart';
 import 'package:interviewhatak/interviewhatak/login/controller/login_cubit.dart';
 import 'package:interviewhatak/interviewhatak/login/login_screen.dart';
 import 'package:interviewhatak/interviewhatak/on_boarding/on_boarding_screen.dart';
+import 'package:interviewhatak/interviewhatak/section/controller/cubit/section_cubit.dart';
+import 'package:interviewhatak/interviewhatak/section/sections_screen.dart';
 import 'package:interviewhatak/interviewhatak/settings/settings_screen.dart';
 import 'package:interviewhatak/interviewhatak/sign_up/controller/register_cubit.dart';
 import 'package:interviewhatak/interviewhatak/sign_up/sign_up_screen.dart';
@@ -66,6 +69,17 @@ class AppRouter {
             child: AnimatedFieldScreen(categoryName: categoryName),
           ),
         );
+
+      case Routes.sectionScreen:
+        final args = settings.arguments as FieldsArgs;
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) =>
+                      getIt<SectionCubit>()..getSections(args.fieldName),
+                  child: SectionsScreen(
+                    fieldsArgs: args,
+                  ),
+                ));
 
       case Routes.editProfileScreen:
         return MaterialPageRoute(builder: (_) => EditProfileScreen());

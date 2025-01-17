@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:interviewhatak/core/helpers/extensions.dart';
+import 'package:interviewhatak/core/routing/routes.dart';
+import 'package:interviewhatak/core/helpers/const.dart/fields_args.dart';
 import 'package:interviewhatak/interviewhatak/field/data/model/fields_model.dart';
 
 class AnimatedFieldListItem extends StatelessWidget {
@@ -13,30 +16,41 @@ class AnimatedFieldListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     String colorString = fieldsModel.color;
     int colorInt = int.parse("0xFF$colorString");
-    return SizeTransition(
-      sizeFactor: animation,
-      axisAlignment: 0.0,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8),
-        child: Container(
-          padding: const EdgeInsets.all(12),
-          decoration: BoxDecoration(
-            color: Color(colorInt),
-            borderRadius: BorderRadius.circular(15),
+    return GestureDetector(
+      onTap: () {
+        context.pushNamed(
+          Routes.sectionScreen,
+          arguments: FieldsArgs(
+            fieldName: fieldsModel.fieldName,
+            fieldDescription: fieldsModel.description,
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(fieldsModel.fieldName,
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          fontSize: 16.sp, fontWeight: FontWeight.bold)),
-                  Text('11', style: const TextStyle(fontSize: 12)),
-                ],
-              ),
-            ],
+        );
+      },
+      child: SizeTransition(
+        sizeFactor: animation,
+        axisAlignment: 0.0,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          child: Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: Color(colorInt),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(fieldsModel.fieldName,
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            fontSize: 16.sp, fontWeight: FontWeight.bold)),
+                    Text('11', style: const TextStyle(fontSize: 12)),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

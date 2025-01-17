@@ -1,27 +1,31 @@
-import 'package:interviewhatak/interviewhatak/question/data/model/questions_model.dart';
-
 class SectionsModel {
   final String sectionName;
-  final String image;
-  final String sectionDate;
   final String sectionDesc;
-  final List<QuestionsModel> questions;
+  final String sectionDate;
+  final String sectionImage;
+  final String sectionDifficulty;
+  final String categoryName;
+  final String fieldName;
 
   SectionsModel({
     required this.sectionName,
-    required this.image,
-    required this.sectionDate,
     required this.sectionDesc,
-    required this.questions,
+    required this.sectionDate,
+    required this.sectionDifficulty,
+    required this.categoryName,
+    required this.sectionImage,
+    required this.fieldName,
   });
 
-  factory SectionsModel.fromJson(Map<String, dynamic> map) {
+  factory SectionsModel.fromJson(Map<String, dynamic> json) {
     return SectionsModel(
-        sectionName: map['section_name'],
-        sectionDesc: map['section_desc'],
-        sectionDate: map['section_date'],
-        image: map['image'],
-        questions: List<QuestionsModel>.from(map['questions']
-            .map((question) => QuestionsModel.fromJson(question))));
+      sectionName: json['section_name'],
+      sectionDesc: json['section_desc'],
+      sectionDate: json['section_date'],
+      sectionDifficulty: json['section_difficulty'],
+      categoryName: json['category_name'],
+      sectionImage: json['section_image'],
+      fieldName: json['field_name'],
+    );
   }
 }

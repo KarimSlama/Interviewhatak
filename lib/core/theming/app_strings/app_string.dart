@@ -41,6 +41,7 @@ class AppString {
   static const String signWithPhone = 'sign with phone';
   static const String signWithGoogle = 'sign with Google';
   static const String enterYourEmailAddress = 'Enter Your Email Address';
+  static const String thisSectionIsEmpty = 'This Section is Empty';
   static const String send = 'SEND';
   static const String welcome = 'Welcome 👋';
   static const String editProfile = 'Edit Profile';

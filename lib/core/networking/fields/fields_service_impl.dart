@@ -15,6 +15,7 @@ class FieldsServiceImpl implements FieldsService {
           .collection('fields')
           .get();
       Constants.categoryName = categoryName;
+      print('the Constants.categoryName is ${Constants.categoryName}');
       final fields = response.docs.map((doc) {
         return FieldsModel.fromJson(doc.data());
       }).toList();

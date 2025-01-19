@@ -19,7 +19,7 @@ class InterviewhatakApp extends StatelessWidget {
       child: MaterialApp(
         title: AppString.interviewhatak,
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.splashScreen,
+        initialRoute: Routes.dashboardScreen,
         onGenerateRoute: appRouter?.generateRoute,
         theme: themeLight,
         darkTheme: themeDark,

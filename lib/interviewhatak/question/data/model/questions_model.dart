@@ -1,28 +1,30 @@
 class QuestionsModel {
-  final String questionText;
-  final String answer;
-  final String difficultyLevel;
-  final String exampleText;
-  final String image;
+  final String categoryName;
+  final String fieldName;
+  final String sectionName;
+  final String question;
+  final String superAnser;
+  final String subAnswer;
   final bool isFavorite;
 
-  QuestionsModel({
-    required this.questionText,
-    required this.answer,
-    required this.difficultyLevel,
-    required this.exampleText,
-    required this.image,
-    this.isFavorite = false,
-  });
+  QuestionsModel(
+      {required this.categoryName,
+      required this.fieldName,
+      required this.sectionName,
+      required this.question,
+      required this.superAnser,
+      required this.subAnswer,
+      required this.isFavorite});
 
-  factory QuestionsModel.fromJson(Map<String, dynamic> map) {
+  factory QuestionsModel.fromJson(Map<String, dynamic> json) {
     return QuestionsModel(
-      questionText: map['question_text'],
-      answer: map['answer'],
-      difficultyLevel: map['difficulty_level'],
-      exampleText: map['example_text'],
-      image: map['image'],
-      isFavorite: map['is_favorite'],
+      categoryName: json['category_name'],
+      fieldName: json['field_name'],
+      sectionName: json['section_name'],
+      question: json['question'],
+      superAnser: json['super_answer'],
+      subAnswer: json['sub_answer'],
+      isFavorite: json['is_favorite'],
     );
   }
 }

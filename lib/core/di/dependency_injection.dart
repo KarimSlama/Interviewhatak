@@ -3,6 +3,8 @@ import 'package:interviewhatak/core/networking/categories/category_service.dart'
 import 'package:interviewhatak/core/networking/categories/category_service_imp.dart';
 import 'package:interviewhatak/core/networking/fields/fields_service.dart';
 import 'package:interviewhatak/core/networking/fields/fields_service_impl.dart';
+import 'package:interviewhatak/core/networking/questions/question_service.dart';
+import 'package:interviewhatak/core/networking/questions/question_service_impl.dart';
 import 'package:interviewhatak/core/networking/register/register_service.dart';
 import 'package:interviewhatak/core/networking/register/register_service_impl.dart';
 import 'package:interviewhatak/core/networking/sections/section_service.dart';
@@ -14,6 +16,8 @@ import 'package:interviewhatak/interviewhatak/field/controller/field_cubit.dart'
 import 'package:interviewhatak/interviewhatak/field/data/repository/fields_repository.dart';
 import 'package:interviewhatak/interviewhatak/login/controller/login_cubit.dart';
 import 'package:interviewhatak/interviewhatak/login/data/repository/login_repository.dart';
+import 'package:interviewhatak/interviewhatak/question/controller/cubit/question_cubit.dart';
+import 'package:interviewhatak/interviewhatak/question/data/repository/question_repository.dart';
 import 'package:interviewhatak/interviewhatak/section/controller/cubit/section_cubit.dart';
 import 'package:interviewhatak/interviewhatak/section/data/repository/section_repository.dart';
 import 'package:interviewhatak/interviewhatak/sign_up/controller/register_cubit.dart';
@@ -54,4 +58,10 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<SectionRepository>(
       () => SectionRepository(getIt()));
   getIt.registerFactory<SectionCubit>(() => SectionCubit(getIt()));
+
+  ///Questions
+  getIt.registerLazySingleton<QuestionService>(() => QuestionServiceImpl());
+  getIt.registerLazySingleton<QuestionRepository>(
+      () => QuestionRepository(getIt()));
+  getIt.registerFactory<QuestionCubit>(() => QuestionCubit(getIt()));
 }

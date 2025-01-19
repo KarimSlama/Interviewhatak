@@ -15,6 +15,8 @@ import 'package:interviewhatak/interviewhatak/category/category_screen.dart';
 import 'package:interviewhatak/interviewhatak/login/controller/login_cubit.dart';
 import 'package:interviewhatak/interviewhatak/login/login_screen.dart';
 import 'package:interviewhatak/interviewhatak/on_boarding/on_boarding_screen.dart';
+import 'package:interviewhatak/interviewhatak/question/controller/cubit/question_cubit.dart';
+import 'package:interviewhatak/interviewhatak/question/questions_screen.dart';
 import 'package:interviewhatak/interviewhatak/section/controller/cubit/section_cubit.dart';
 import 'package:interviewhatak/interviewhatak/section/sections_screen.dart';
 import 'package:interviewhatak/interviewhatak/settings/settings_screen.dart';
@@ -78,6 +80,17 @@ class AppRouter {
                       getIt<SectionCubit>()..getSections(args.fieldName),
                   child: SectionsScreen(
                     fieldsArgs: args,
+                  ),
+                ));
+
+      case Routes.questionScreen:
+        final sectionName = settings.arguments as String;
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) =>
+                      getIt<QuestionCubit>()..getQuestions(sectionName),
+                  child: QuestionsScreen(
+                    sectionName: sectionName,
                   ),
                 ));
 

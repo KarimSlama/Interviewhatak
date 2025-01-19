@@ -50,6 +50,7 @@ dependencies:
   # Flutter library to load and cache network images. Can also be used with placeholder and error widgets.
   cached_network_image: ^3.4.1
 
+  lottie: ^3.3.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

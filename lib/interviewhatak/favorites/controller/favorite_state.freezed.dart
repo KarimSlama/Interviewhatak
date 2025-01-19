@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'question_state.dart';
+part of 'favorite_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$QuestionState<T> {
+mixin _$FavoriteState<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -75,23 +75,23 @@ mixin _$QuestionState<T> {
 }
 
 /// @nodoc
-abstract class $QuestionStateCopyWith<T, $Res> {
-  factory $QuestionStateCopyWith(
-          QuestionState<T> value, $Res Function(QuestionState<T>) then) =
-      _$QuestionStateCopyWithImpl<T, $Res, QuestionState<T>>;
+abstract class $FavoriteStateCopyWith<T, $Res> {
+  factory $FavoriteStateCopyWith(
+          FavoriteState<T> value, $Res Function(FavoriteState<T>) then) =
+      _$FavoriteStateCopyWithImpl<T, $Res, FavoriteState<T>>;
 }
 
 /// @nodoc
-class _$QuestionStateCopyWithImpl<T, $Res, $Val extends QuestionState<T>>
-    implements $QuestionStateCopyWith<T, $Res> {
-  _$QuestionStateCopyWithImpl(this._value, this._then);
+class _$FavoriteStateCopyWithImpl<T, $Res, $Val extends FavoriteState<T>>
+    implements $FavoriteStateCopyWith<T, $Res> {
+  _$FavoriteStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of QuestionState
+  /// Create a copy of FavoriteState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -104,13 +104,13 @@ abstract class _$$InitialImplCopyWith<T, $Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<T, $Res>
-    extends _$QuestionStateCopyWithImpl<T, $Res, _$InitialImpl<T>>
+    extends _$FavoriteStateCopyWithImpl<T, $Res, _$InitialImpl<T>>
     implements _$$InitialImplCopyWith<T, $Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl<T> _value, $Res Function(_$InitialImpl<T>) _then)
       : super(_value, _then);
 
-  /// Create a copy of QuestionState
+  /// Create a copy of FavoriteState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -121,7 +121,7 @@ class _$InitialImpl<T> implements _Initial<T> {
 
   @override
   String toString() {
-    return 'QuestionState<$T>.initial()';
+    return 'FavoriteState<$T>.initial()';
   }
 
   @override
@@ -214,7 +214,7 @@ class _$InitialImpl<T> implements _Initial<T> {
   }
 }
 
-abstract class _Initial<T> implements QuestionState<T> {
+abstract class _Initial<T> implements FavoriteState<T> {
   const factory _Initial() = _$InitialImpl<T>;
 }
 
@@ -227,13 +227,13 @@ abstract class _$$LoadingImplCopyWith<T, $Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<T, $Res>
-    extends _$QuestionStateCopyWithImpl<T, $Res, _$LoadingImpl<T>>
+    extends _$FavoriteStateCopyWithImpl<T, $Res, _$LoadingImpl<T>>
     implements _$$LoadingImplCopyWith<T, $Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl<T> _value, $Res Function(_$LoadingImpl<T>) _then)
       : super(_value, _then);
 
-  /// Create a copy of QuestionState
+  /// Create a copy of FavoriteState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -244,7 +244,7 @@ class _$LoadingImpl<T> implements Loading<T> {
 
   @override
   String toString() {
-    return 'QuestionState<$T>.loading()';
+    return 'FavoriteState<$T>.loading()';
   }
 
   @override
@@ -337,7 +337,7 @@ class _$LoadingImpl<T> implements Loading<T> {
   }
 }
 
-abstract class Loading<T> implements QuestionState<T> {
+abstract class Loading<T> implements FavoriteState<T> {
   const factory Loading() = _$LoadingImpl<T>;
 }
 
@@ -350,13 +350,13 @@ abstract class _$$ChangedImplCopyWith<T, $Res> {
 
 /// @nodoc
 class __$$ChangedImplCopyWithImpl<T, $Res>
-    extends _$QuestionStateCopyWithImpl<T, $Res, _$ChangedImpl<T>>
+    extends _$FavoriteStateCopyWithImpl<T, $Res, _$ChangedImpl<T>>
     implements _$$ChangedImplCopyWith<T, $Res> {
   __$$ChangedImplCopyWithImpl(
       _$ChangedImpl<T> _value, $Res Function(_$ChangedImpl<T>) _then)
       : super(_value, _then);
 
-  /// Create a copy of QuestionState
+  /// Create a copy of FavoriteState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -367,7 +367,7 @@ class _$ChangedImpl<T> implements Changed<T> {
 
   @override
   String toString() {
-    return 'QuestionState<$T>.changed()';
+    return 'FavoriteState<$T>.changed()';
   }
 
   @override
@@ -460,7 +460,7 @@ class _$ChangedImpl<T> implements Changed<T> {
   }
 }
 
-abstract class Changed<T> implements QuestionState<T> {
+abstract class Changed<T> implements FavoriteState<T> {
   const factory Changed() = _$ChangedImpl<T>;
 }
 
@@ -475,13 +475,13 @@ abstract class _$$LoadedImplCopyWith<T, $Res> {
 
 /// @nodoc
 class __$$LoadedImplCopyWithImpl<T, $Res>
-    extends _$QuestionStateCopyWithImpl<T, $Res, _$LoadedImpl<T>>
+    extends _$FavoriteStateCopyWithImpl<T, $Res, _$LoadedImpl<T>>
     implements _$$LoadedImplCopyWith<T, $Res> {
   __$$LoadedImplCopyWithImpl(
       _$LoadedImpl<T> _value, $Res Function(_$LoadedImpl<T>) _then)
       : super(_value, _then);
 
-  /// Create a copy of QuestionState
+  /// Create a copy of FavoriteState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -513,7 +513,7 @@ class _$LoadedImpl<T> implements Loaded<T> {
 
   @override
   String toString() {
-    return 'QuestionState<$T>.loaded(questions: $questions)';
+    return 'FavoriteState<$T>.loaded(questions: $questions)';
   }
 
   @override
@@ -529,7 +529,7 @@ class _$LoadedImpl<T> implements Loaded<T> {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_questions));
 
-  /// Create a copy of QuestionState
+  /// Create a copy of FavoriteState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -618,12 +618,12 @@ class _$LoadedImpl<T> implements Loaded<T> {
   }
 }
 
-abstract class Loaded<T> implements QuestionState<T> {
+abstract class Loaded<T> implements FavoriteState<T> {
   const factory Loaded(final List<QuestionsModel> questions) = _$LoadedImpl<T>;
 
   List<QuestionsModel> get questions;
 
-  /// Create a copy of QuestionState
+  /// Create a copy of FavoriteState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoadedImplCopyWith<T, _$LoadedImpl<T>> get copyWith =>
@@ -641,13 +641,13 @@ abstract class _$$ErrorImplCopyWith<T, $Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<T, $Res>
-    extends _$QuestionStateCopyWithImpl<T, $Res, _$ErrorImpl<T>>
+    extends _$FavoriteStateCopyWithImpl<T, $Res, _$ErrorImpl<T>>
     implements _$$ErrorImplCopyWith<T, $Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl<T> _value, $Res Function(_$ErrorImpl<T>) _then)
       : super(_value, _then);
 
-  /// Create a copy of QuestionState
+  /// Create a copy of FavoriteState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -673,7 +673,7 @@ class _$ErrorImpl<T> implements Error<T> {
 
   @override
   String toString() {
-    return 'QuestionState<$T>.error(message: $message)';
+    return 'FavoriteState<$T>.error(message: $message)';
   }
 
   @override
@@ -687,7 +687,7 @@ class _$ErrorImpl<T> implements Error<T> {
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  /// Create a copy of QuestionState
+  /// Create a copy of FavoriteState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -776,12 +776,12 @@ class _$ErrorImpl<T> implements Error<T> {
   }
 }
 
-abstract class Error<T> implements QuestionState<T> {
+abstract class Error<T> implements FavoriteState<T> {
   const factory Error(final String message) = _$ErrorImpl<T>;
 
   String get message;
 
-  /// Create a copy of QuestionState
+  /// Create a copy of FavoriteState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorImplCopyWith<T, _$ErrorImpl<T>> get copyWith =>

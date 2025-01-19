@@ -60,6 +60,7 @@ class AppRouter {
               create: (context) => getIt<DashboardCubit>(),
               child: DashboardScreen()),
         );
+
       case Routes.categoryScreen:
         return MaterialPageRoute(builder: (_) => CategoryScreen());
 

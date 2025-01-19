@@ -1,6 +1,8 @@
 import 'package:get_it/get_it.dart';
 import 'package:interviewhatak/core/networking/categories/category_service.dart';
 import 'package:interviewhatak/core/networking/categories/category_service_imp.dart';
+import 'package:interviewhatak/core/networking/favorite/favorite_service.dart';
+import 'package:interviewhatak/core/networking/favorite/favorite_service_impl.dart';
 import 'package:interviewhatak/core/networking/fields/fields_service.dart';
 import 'package:interviewhatak/core/networking/fields/fields_service_impl.dart';
 import 'package:interviewhatak/core/networking/questions/question_service.dart';
@@ -12,6 +14,8 @@ import 'package:interviewhatak/core/networking/sections/section_service_impl.dar
 import 'package:interviewhatak/interviewhatak/dashboard/controller/dashboard_cubit.dart';
 import 'package:interviewhatak/interviewhatak/category/controller/category_cubit.dart';
 import 'package:interviewhatak/interviewhatak/category/data/repository/category_repo.dart';
+import 'package:interviewhatak/interviewhatak/favorites/controller/favorite_cubit.dart';
+import 'package:interviewhatak/interviewhatak/favorites/data/repository/favorite_repository.dart';
 import 'package:interviewhatak/interviewhatak/field/controller/field_cubit.dart';
 import 'package:interviewhatak/interviewhatak/field/data/repository/fields_repository.dart';
 import 'package:interviewhatak/interviewhatak/login/controller/login_cubit.dart';
@@ -64,4 +68,10 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<QuestionRepository>(
       () => QuestionRepository(getIt()));
   getIt.registerFactory<QuestionCubit>(() => QuestionCubit(getIt()));
+
+  ///Favorite Questions
+  getIt.registerLazySingleton<FavoriteService>(() => FavoriteServiceImpl());
+  getIt.registerLazySingleton<FavoriteRepository>(
+      () => FavoriteRepository(getIt()));
+  getIt.registerFactory<FavoriteCubit>(() => FavoriteCubit(getIt()));
 }

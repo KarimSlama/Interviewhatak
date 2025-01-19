@@ -25,7 +25,6 @@ class LoginCubit extends Cubit<LoginState> {
 
     respone.when(
       success: (uId) {
-        print('the uid id $uId');
         saveUserUid(uId!);
         emit(LoginState.success(uId));
       },

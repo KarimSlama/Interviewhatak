@@ -1,30 +1,27 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:interviewhatak/core/helpers/constants.dart';
-import 'package:interviewhatak/core/networking/questions/question_service.dart';
+import 'package:interviewhatak/core/networking/favorite/favorite_service.dart';
 import 'package:interviewhatak/core/networking/server_result.dart';
 import 'package:interviewhatak/interviewhatak/question/data/model/questions_model.dart';
 
-class QuestionServiceImpl implements QuestionService {
+class FavoriteServiceImpl implements FavoriteService {
   @override
-  Future<ServerResult<List<QuestionsModel>>> getQuestions(
-      String sectionName) async {
+  Future<ServerResult<List<QuestionsModel>>> getFavoriteQuestions() async {
+    List<QuestionsModel> favoriteQuestions = [];
+
     try {
-      final response = await FirebaseFirestore.instance
-          .collection('categories')
-          .doc(Constants.categoryName)
-          .collection('fields')
-          .doc(Constants.fieldName)
-          .collection('sections')
-          .doc(sectionName)
-          .collection('questions')
+      final favoriteQuestionsSnapshot = await FirebaseFirestore.instance
+          .collectionGroup('questions')
+          .where('is_favorite', isEqualTo: true)
           .get();
 
-      final questions = response.docs.map((doc) {
-        return QuestionsModel.fromJson(doc.data());
-      }).toList();
-      return ServerResult.success(questions);
+      for (var doc in favoriteQuestionsSnapshot.docs) {
+        final question = QuestionsModel.fromJson(doc.data());
+        favoriteQuestions.add(question);
+      }
+      return ServerResult.success(favoriteQuestions);
     } catch (error) {
-      return ServerResult.failure('Failed to fetch Questions $error');
+      return ServerResult.failure('Error fetching favorite questions: $error');
     }
   }
 

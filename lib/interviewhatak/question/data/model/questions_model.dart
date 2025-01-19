@@ -3,7 +3,7 @@ class QuestionsModel {
   final String fieldName;
   final String sectionName;
   final String question;
-  final String superAnser;
+  final String superAnswer;
   final String subAnswer;
   final bool isFavorite;
 
@@ -12,9 +12,28 @@ class QuestionsModel {
       required this.fieldName,
       required this.sectionName,
       required this.question,
-      required this.superAnser,
+      required this.superAnswer,
       required this.subAnswer,
       required this.isFavorite});
+
+  QuestionsModel copyWith({
+    String? id,
+    String? question,
+    String? superAnswer,
+    String? subAnswer,
+    bool? isFavorite,
+    String? sectionName,
+  }) {
+    return QuestionsModel(
+      categoryName: categoryName,
+      fieldName: fieldName,
+      question: question ?? this.question,
+      superAnswer: superAnswer ?? this.superAnswer,
+      subAnswer: subAnswer ?? this.subAnswer,
+      isFavorite: isFavorite ?? this.isFavorite,
+      sectionName: sectionName ?? this.sectionName,
+    );
+  }
 
   factory QuestionsModel.fromJson(Map<String, dynamic> json) {
     return QuestionsModel(
@@ -22,7 +41,7 @@ class QuestionsModel {
       fieldName: json['field_name'],
       sectionName: json['section_name'],
       question: json['question'],
-      superAnser: json['super_answer'],
+      superAnswer: json['super_answer'],
       subAnswer: json['sub_answer'],
       isFavorite: json['is_favorite'],
     );

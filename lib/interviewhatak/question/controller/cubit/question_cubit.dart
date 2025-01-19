@@ -4,6 +4,7 @@ import 'package:interviewhatak/interviewhatak/question/data/repository/question_
 
 class QuestionCubit extends Cubit<QuestionState> {
   final QuestionRepository questionRepository;
+
   QuestionCubit(this.questionRepository) : super(QuestionState.initial());
 
   Future<void> getQuestions(String sectionName) async {
@@ -17,5 +18,25 @@ class QuestionCubit extends Cubit<QuestionState> {
         emit(QuestionState.error(error));
       },
     );
+  }
+
+  Future<void> toggleFavoriteIcon(questionId, isFavorite, sectionName) async {
+    final result = await questionRepository.toggleFavorite(
+        questionId, isFavorite, sectionName);
+
+    result.when(
+        success: (data) {
+          final currentState = state;
+          if (currentState is Loaded) {
+            final updatedQuestions = currentState.questions.map((question) {
+              if (question.question == questionId) {
+                return question.copyWith(isFavorite: !isFavorite);
+              }
+              return question;
+            }).toList();
+            emit(QuestionState.loaded(updatedQuestions));
+          }
+        },
+        failure: (error) => (QuestionState.error(error)));
   }
 }

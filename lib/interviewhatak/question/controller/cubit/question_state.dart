@@ -6,6 +6,7 @@ part 'question_state.freezed.dart';
 class QuestionState<T> with _$QuestionState<T> {
   const factory QuestionState.initial() = _Initial;
   const factory QuestionState.loading() = Loading;
+  const factory QuestionState.changed() = Changed;
   const factory QuestionState.loaded(List<QuestionsModel> questions) = Loaded;
   const factory QuestionState.error(String message) = Error;
 }

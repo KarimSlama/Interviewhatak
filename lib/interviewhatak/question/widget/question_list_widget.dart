@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icon_broken/icon_broken.dart';
-import 'package:interviewhatak/core/theming/app_colors/app_colors.dart';
+import 'package:interviewhatak/core/widgets/question_card_item_widget.dart';
+import 'package:interviewhatak/interviewhatak/question/controller/cubit/question_cubit.dart';
 import 'package:interviewhatak/interviewhatak/question/data/model/questions_model.dart';
 
 class QuestionListWidget extends StatelessWidget {
@@ -12,65 +13,19 @@ class QuestionListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 12,
-        vertical: 12,
-      ),
-      child: Material(
-        elevation: 5,
-        borderRadius: BorderRadiusDirectional.circular(12),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
-          child: Column(
-            spacing: 10.h,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                spacing: 10.w,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Icon(
-                    IconBroken.Bag,
-                    color: AppColors.orange,
-                  ),
-                  Flexible(
-                    child: SelectableText(
-                      questions[index].question,
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          height: 1.6.h,
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                ],
-              ),
-              SelectableText(
-                questions[index].superAnser,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium
-                    ?.copyWith(height: 1.6.h, fontSize: 16.sp),
-              ),
-              Text(
-                'Example',
-                style: TextStyle(
-                    decoration: TextDecoration.underline,
-                    fontWeight: FontWeight.w700),
-              ),
-              SelectableText(
-                questions[index].subAnswer,
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      height: 1.6.h,
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w500,
-                      fontStyle: FontStyle.italic,
-                    ),
-              ),
-            ],
-          ),
-        ),
+    return QuestionCardItemWidget(
+      question: questions[index].question,
+      answer: questions[index].superAnswer,
+      example: questions[index].subAnswer,
+      onBackPressed: () async {
+        context.read<QuestionCubit>().toggleFavoriteIcon(
+            questions[index].question,
+            questions[index].isFavorite,
+            questions[index].sectionName);
+      },
+      icon: Icon(
+        questions[index].isFavorite ? Icons.favorite : IconBroken.Heart,
+        color: questions[index].isFavorite ? Colors.red : Colors.grey,
       ),
     );
   }

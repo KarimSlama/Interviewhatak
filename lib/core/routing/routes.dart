@@ -8,6 +8,7 @@ class Routes {
   static const String categoryScreen = '/categoryScreen';
   static const String fieldScreen = '/fieldScreen';
   static const String sectionScreen = '/sectionScreen';
+  static const String questionScreen = '/questionScreen';
   static const String settingsScreen = '/settingsScreen';
   static const String editProfileScreen = '/editProfileScreen';
   static const String userManagementScreen = '/userManagementScreen';

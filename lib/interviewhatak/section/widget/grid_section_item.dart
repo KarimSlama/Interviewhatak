@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:interviewhatak/core/helpers/extensions.dart';
+import 'package:interviewhatak/core/routing/routes.dart';
 import 'package:interviewhatak/interviewhatak/section/data/model/sections_model.dart';
 
 class GridSectionItem extends StatelessWidget {
@@ -11,7 +13,10 @@ class GridSectionItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        context.pushNamed(Routes.questionScreen,
+            arguments: sections[index].sectionName);
+      },
       child: Column(
         spacing: 10.h,
         children: [

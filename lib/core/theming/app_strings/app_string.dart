@@ -42,6 +42,11 @@ class AppString {
   static const String signWithGoogle = 'sign with Google';
   static const String enterYourEmailAddress = 'Enter Your Email Address';
   static const String thisSectionIsEmpty = 'This Section is Empty';
+  static const String favoriteIsEmpty = 'Favorite is Empty';
+  static const String example = 'Example';
+  static const String thereIsNoItemIncludedAsFavorite =
+      'There is no Item included as favorite';
+  static const String favorites = 'Favorites';
   static const String send = 'SEND';
   static const String welcome = 'Welcome 👋';
   static const String editProfile = 'Edit Profile';
@@ -49,6 +54,19 @@ class AppString {
   static const String userManagement = 'User Management';
   static const String aboutUs = 'About Us';
   static const String contactUs = 'Contact Us';
+  static const String account = 'Account';
+  static const String signedInAs = 'Signed in As: ';
+  static const String email = 'Email';
+  static const String mobilePhone = 'Mobile Phone';
+  static const String languages = 'Languages';
+  static const String additional = 'Additional';
+  static const String notification = 'Notification';
+  static const String enabled = 'Enabled';
+  static const String theme = 'Theme';
+  static const String light = 'Light';
+  static const String closeAccount = 'Close Account';
+  static const String closeAccountFromGooglePlay =
+      'close account from google play';
   static const String logout = 'Logout';
   static const String doYouWantToLogout = 'Do you want to logout ?';
   static const String no = 'No';

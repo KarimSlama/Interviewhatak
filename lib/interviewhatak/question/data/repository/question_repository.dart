@@ -11,4 +11,10 @@ class QuestionRepository {
       String sectionName) async {
     return await questionService.getQuestions(sectionName);
   }
+
+  Future<ServerResult<void>> toggleFavorite(
+      questionId, isFavorite, sectionName) async {
+    return await questionService.toggleFavorite(
+        questionId, isFavorite, sectionName);
+  }
 }

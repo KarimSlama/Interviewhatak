@@ -3,9 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icon_broken/icon_broken.dart';
 import 'package:interviewhatak/core/di/dependency_injection.dart';
-import 'package:interviewhatak/core/helpers/extensions.dart';
 import 'package:interviewhatak/core/theming/app_strings/app_string.dart';
-import 'package:interviewhatak/core/widgets/loading_progress_bar_widget.dart';
 import 'package:interviewhatak/core/widgets/question_card_item_widget.dart';
 import 'package:interviewhatak/interviewhatak/favorites/controller/favorite_cubit.dart';
 import 'package:interviewhatak/interviewhatak/favorites/controller/favorite_state.dart';
@@ -21,20 +19,27 @@ class FavoriteScreen extends StatelessWidget {
       child:
           BlocBuilder<FavoriteCubit, FavoriteState>(builder: (context, state) {
         return state.maybeWhen(
-            loading: () => const LoadingProgressBarWidget(),
+            // loading: () => const LoadingProgressBarWidget(),
             loaded: (questions) {
               print('the question is ${questions.length}');
-              if (questions.isNullOrEmpty())
-                return Expanded(
-                  child: Column(
-                    spacing: 15.h,
-                    children: [
-                      Lottie.asset('assets/icons/empty.json'),
-                      Text(AppString.thisSectionIsEmpty),
-                    ],
+              if (questions.isEmpty) {
+                return SafeArea(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Lottie.asset('assets/icons/empty.json'),
+                        Text(
+                          AppString.thisSectionIsEmpty,
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
                   ),
                 );
-              else
+              } else
                 return SafeArea(
                   child: Padding(
                     padding: const EdgeInsetsDirectional.symmetric(

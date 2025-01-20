@@ -28,7 +28,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     );
     response.when(
       success: (uId) {
-        saveUserUid(uId);
+        saveUserUid(uId, nameController.text);
         emit(RegisterState.success(uId));
       },
       failure: (error) {
@@ -37,7 +37,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     );
   }
 
-  Future<void> saveUserUid(uId) async {
+  Future<void> saveUserUid(uId, name) async {
     await SharedPreference.setData(SharedPreferenceKey.userUidKey, uId);
   }
 }

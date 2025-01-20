@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icon_broken/icon_broken.dart';
 import 'package:interviewhatak/core/di/dependency_injection.dart';
+import 'package:interviewhatak/core/helpers/app_constants.dart';
+import 'package:interviewhatak/core/helpers/shared_preference.dart';
 import 'package:interviewhatak/core/helpers/spacing.dart';
 import 'package:interviewhatak/core/theming/app_strings/app_string.dart';
 import 'package:interviewhatak/interviewhatak/category/controller/category_cubit.dart';
@@ -28,7 +30,7 @@ class CategoryScreen extends StatelessWidget {
                   CircleAvatar(
                     radius: 28,
                     backgroundImage: NetworkImage(
-                      'https://avatars.githubusercontent.com/u/96607967?v=4',
+                      'https://img.freepik.com/premium-vector/european-men-avatar_7814-344.jpg?w=740',
                     ),
                   ),
                   Spacer(),
@@ -38,7 +40,7 @@ class CategoryScreen extends StatelessWidget {
                       Text(AppString.welcome),
                       horizontalSpace(5),
                       Text(
-                        'Karim Slama',
+                        'Slama',
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                               fontSize: 18.sp,
                             ),

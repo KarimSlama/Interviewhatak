@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:interviewhatak/core/theming/app_strings/app_string.dart';
 
-class AlertDialog extends StatelessWidget {
-  const AlertDialog({super.key});
+class AlertDialogWidget extends StatelessWidget {
+  const AlertDialogWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

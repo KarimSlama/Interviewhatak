@@ -38,10 +38,4 @@ class RegisterServiceImpl implements RegisterService {
       return ServerResult.failure(error.toString());
     }
   }
-
-  @override
-  Future<void> signOut() {
-    // TODO: implement signOut
-    throw UnimplementedError();
-  }
 }

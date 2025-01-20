@@ -8,7 +8,7 @@ class FavoriteCubit extends Cubit<FavoriteState> {
   FavoriteCubit(this.favoriteRepository) : super(FavoriteState.initial());
 
   Future<void> fetchAllFavorites() async {
-    emit(FavoriteState.loading());
+    // emit(FavoriteState.loading());
     final result = await favoriteRepository.getFavoriteQuestions();
     result.when(
       success: (data) {
@@ -26,24 +26,22 @@ class FavoriteCubit extends Cubit<FavoriteState> {
     final result = await favoriteRepository.toggleFavorite(
         questionId, isFavorite, sectionName);
 
-    result.when(success: (data) {
-      final currentState = state;
-      if (currentState is Loaded) {
-        final updatedQuestions = currentState.questions.map((question) {
-          if (question.question == questionId) {
+    result.when(
+      success: (data) {
+        final currentState = state;
+        if (currentState is Loaded) {
+          final updatedQuestions = currentState.questions.where((question) {
             if (isFavorite) {
-              return question.copyWith(isFavorite: null);
+              return question.question != questionId;
             }
-            return question.copyWith(isFavorite: true);
+            return true;
+          }).toList();
+          if (updatedQuestions.isEmpty) {
+            data = null;
           }
-          return question;
-        }).toList();
-
-        emit(FavoriteState.loaded(updatedQuestions));
-      }
-    }, failure: (error) {
-      print('the error in favorite cubit is ${error.toString()}');
-      emit(FavoriteState.error(error));
-    });
+        }
+      },
+      failure: (error) => emit(FavoriteState.error(error)),
+    );
   }
 }

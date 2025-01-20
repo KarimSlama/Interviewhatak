@@ -53,10 +53,20 @@ class AppString {
   static const String settings = 'Settings';
   static const String userManagement = 'User Management';
   static const String aboutUs = 'About Us';
+  static const String aboutUs1 =
+      'Interviewhatak is a comprehensive platform designed to help you ace any job interview in the technology sector. Whether you\'re a beginner or an experienced professional, our app offers a wide range of resources to prepare you for the toughest interviews.';
+  static const String aboutUs2 =
+      'At Interviewhatak, we aim to equip candidates with the knowledge and skills necessary to excel in technical interviews. Our app provides a curated collection of questions, tutorials, and practice tests to help you succeed.';
+  static const String aboutUs3 =
+      'Interviewhatak is your ultimate interview prep partner. With expert-crafted questions, tips, and mock interviews, we help you build the confidence needed to land your dream job in the technology field.';
+  static const String aboutUs4 =
+      'Prepare for your next big interview with Interviewhatak. Our app offers a structured approach to mastering technical interviews, featuring questions and answers for a variety of roles in the tech industry.';
+
   static const String contactUs = 'Contact Us';
   static const String account = 'Account';
   static const String signedInAs = 'Signed in As: ';
   static const String email = 'Email';
+  static const String message = 'Message';
   static const String mobilePhone = 'Mobile Phone';
   static const String languages = 'Languages';
   static const String additional = 'Additional';
@@ -64,9 +74,16 @@ class AppString {
   static const String enabled = 'Enabled';
   static const String theme = 'Theme';
   static const String light = 'Light';
+  static const String dark = 'Dark';
   static const String closeAccount = 'Close Account';
+  static const String update = 'Update';
+  static const String moreInfo = 'More Info.';
   static const String closeAccountFromGooglePlay =
       'close account from google play';
+  static const String haveAProjectInMind = 'Have a Project in mind ?';
+  static const String reachOutToUsWeCanMakeSomethingAwesomeTogether =
+      'Reach out to us. We can make something awesome together.';
+  static const String developedBy = 'developed by';
   static const String logout = 'Logout';
   static const String doYouWantToLogout = 'Do you want to logout ?';
   static const String no = 'No';

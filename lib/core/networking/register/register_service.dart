@@ -9,6 +9,4 @@ abstract class RegisterService {
       RegisterRequestModel registerRequestModel);
 
   Future<ServerResult<String?>> login(LoginRequestModel loginRequestModel);
-
-  Future<void> signOut();
 }

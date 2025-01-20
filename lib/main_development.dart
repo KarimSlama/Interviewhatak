@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:interviewhatak/core/di/dependency_injection.dart';
 import 'package:interviewhatak/core/helpers/app_constants.dart';
+import 'package:interviewhatak/core/helpers/constants.dart';
 import 'package:interviewhatak/core/helpers/extensions.dart';
 import 'package:interviewhatak/core/helpers/shared_preference.dart';
 import 'package:interviewhatak/core/routing/app_router.dart';
@@ -14,20 +15,23 @@ void main() async {
   await ScreenUtil.ensureScreenSize();
   setupGetIt();
   checkIfUserLoggedIn();
+  Constants.isDark = await SharedPreference.getBool('isDark');
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
   runApp(
     InterviewhatakApp(
       appRouter: AppRouter(),
+      isDark: Constants.isDark,
     ),
   );
 }
 
 checkIfUserLoggedIn() async {
-  String userKey =
+  Constants.userKey =
       await SharedPreference.getString(SharedPreferenceKey.userUidKey);
-  if (!userKey.isNullOrEmpty()) {
+  if (!Constants.userKey.isNullOrEmpty()) {
     isLoggedUser = true;
   } else
     isLoggedUser = false;

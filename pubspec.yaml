@@ -49,6 +49,9 @@ dependencies:
   curved_navigation_bar: ^1.0.6
   # Flutter library to load and cache network images. Can also be used with placeholder and error widgets.
   cached_network_image: ^3.4.1
+  url_launcher: ^6.1.8
+  fluttertoast: ^8.2.10
+  quickalert: ^1.1.0
 
   lottie: ^3.3.0
 dev_dependencies:

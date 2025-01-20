@@ -4,6 +4,7 @@ import 'package:interviewhatak/core/di/dependency_injection.dart';
 import 'package:interviewhatak/core/routing/routes.dart';
 import 'package:interviewhatak/interviewhatak/about_us/about_us_screen.dart';
 import 'package:interviewhatak/interviewhatak/contact_us/contact_us_screen.dart';
+import 'package:interviewhatak/interviewhatak/contact_us/controller/cubit/contact_cubit.dart';
 import 'package:interviewhatak/interviewhatak/dashboard/controller/dashboard_cubit.dart';
 import 'package:interviewhatak/interviewhatak/dashboard/dashboard_screen.dart';
 import 'package:interviewhatak/interviewhatak/edit_profile/edit_profile_screen.dart';
@@ -15,10 +16,13 @@ import 'package:interviewhatak/interviewhatak/category/category_screen.dart';
 import 'package:interviewhatak/interviewhatak/login/controller/login_cubit.dart';
 import 'package:interviewhatak/interviewhatak/login/login_screen.dart';
 import 'package:interviewhatak/interviewhatak/on_boarding/on_boarding_screen.dart';
+import 'package:interviewhatak/interviewhatak/profile/controller/user_cubit.dart';
+import 'package:interviewhatak/interviewhatak/profile/data/model/user_model.dart';
 import 'package:interviewhatak/interviewhatak/question/controller/cubit/question_cubit.dart';
 import 'package:interviewhatak/interviewhatak/question/questions_screen.dart';
 import 'package:interviewhatak/interviewhatak/section/controller/cubit/section_cubit.dart';
 import 'package:interviewhatak/interviewhatak/section/sections_screen.dart';
+import 'package:interviewhatak/interviewhatak/settings/controller/setting_cubit.dart';
 import 'package:interviewhatak/interviewhatak/settings/settings_screen.dart';
 import 'package:interviewhatak/interviewhatak/sign_up/controller/register_cubit.dart';
 import 'package:interviewhatak/interviewhatak/sign_up/sign_up_screen.dart';
@@ -96,10 +100,14 @@ class AppRouter {
                 ));
 
       case Routes.editProfileScreen:
-        return MaterialPageRoute(builder: (_) => EditProfileScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                create: (context) => getIt<UserCubit>()..getUser(),
+                child: EditProfileScreen()));
 
       case Routes.settingsScreen:
-        return MaterialPageRoute(builder: (_) => SettingsScreen());
+        final user = settings.arguments as UserModel;
+        return MaterialPageRoute(builder: (_) => SettingsScreen(user: user));
 
       case Routes.userManagementScreen:
         return MaterialPageRoute(builder: (_) => UserManagementScreen());
@@ -108,7 +116,11 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => AboutUsScreen());
 
       case Routes.contactUsScreen:
-        return MaterialPageRoute(builder: (_) => ContactUsScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => getIt<ContactCubit>(),
+                  child: ContactUsScreen(),
+                ));
 
       default:
         return null;

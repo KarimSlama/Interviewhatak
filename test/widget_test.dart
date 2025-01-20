@@ -7,13 +7,19 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:interviewhatak/core/helpers/shared_preference.dart';
 import 'package:interviewhatak/core/routing/app_router.dart';
 import 'package:interviewhatak/interviewhatak_app.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(InterviewhatakApp(appRouter: AppRouter()));
+    final isDark = await SharedPreference.getBool('isDark');
+
+    await tester.pumpWidget(InterviewhatakApp(
+      appRouter: AppRouter(),
+      isDark: isDark,
+    ));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
